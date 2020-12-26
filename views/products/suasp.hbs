@@ -1,0 +1,42 @@
+<div>
+
+	<!-- Page Heading -->
+	<h1 class="h3 mb-2 text-gray-800">Sửa sản phẩm</h1>
+
+	<!-- DataTales Example -->
+	{{!-- <div class="card shadow mb-4"> --}}
+	<div class="card-header py-3">
+		<h6 class="m-0 font-weight-bold text-primary">Điện thoại</h6>
+	</div>
+	{{!-- <div class="card-body"> --}}
+	<form action="" method="post" enctype="multipart/form-data">
+		<p>Tên:</p>
+		<input class="form-control" type="text" name="Name" value="{{#each value}}{{this.Name}}{{/each}}">
+		<p>Mô tả:</p>
+		<input class="form-control" type="text" name="Title" value="{{#each value}}{{this.Title}}{{/each}}">
+		<p>Nơi sản xuất:</p>
+		<input class="form-control" type="text" name="Nation" value="{{#each value}}{{this.Nation}}{{/each}}">
+		<p>Giá:</p>
+		<input class="form-control" type="text" name="Price" value="{{#each value}}{{this.Price}}{{/each}}">
+		<p>Số lượng:</p>
+		<input class="form-control" type="text" name="Quantity" value="{{#each value}}{{this.Quantity}}{{/each}}">
+		<p>Anh:</p>
+		<input type="file" name="Img">
+		<br>
+		<p>Loại sản phẩm: </p>
+		<div class="form-group">
+			<label for=""></label>
+			<select class="form-control" name="Category">
+				{{#each themloaisanpham}}
+				<option>
+                    {{#each this}}
+					{{Name}}
+                    {{/each}}
+				</option>
+				{{/each}}
+			</select>
+		</div>
+		<br>
+		<button class="btn btn-primary mt-5">Cập nhật</button>
+	</form>
+</div>
